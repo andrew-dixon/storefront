@@ -1,14 +1,19 @@
+// Bourbon
+// See: https://www.bourbon.io/docs/latest/
 @import 'bourbon';
 
 // Susy
-// Susy grid system. See: http://susydocs.oddbird.net/en/latest/
-@import '../../../node_modules/susy/sass/susy';
+// Susy grid system. See: http://oddbird.net/susy/docs/
+@import 'node_modules/susy/sass/susy';
+
+// Vendors
+// External libraries and frameworks.
+@import '../sass/vendors/modular-scale';
 
 // Utilities
 // Sass tools and helpers used across the project.
 @import '../sass/utils/variables';
 @import '../sass/utils/mixins';
-@import '../sass/vendors/modular-scale';
 
 /**
  * Base styles
@@ -50,7 +55,6 @@
 .editor-post-title__block .editor-post-title__input {
 	clear: both;
 	font-weight: 300;
-	color: darken( $color_body, 20% );
 	font-size: ms(5);
 	line-height: 1.214;
 	letter-spacing: -1px;
@@ -72,7 +76,6 @@ h6,
 	clear: both;
 	font-weight: 300;
 	margin: 0 0 ms(-3);
-	color: darken( $color_body, 20% );
 }
 
 h1,
@@ -249,10 +252,6 @@ img {
 
 a {
 	text-decoration: none;
-
-	&:focus {
-		outline: 1px dotted $color_woocommerce;
-	}
 }
 
 table {
@@ -308,7 +307,7 @@ table {
 
 // Main content width
 .wp-block {
-	max-width: ms(18);
+	max-width: $container-width;
 }
 
 .wp-block[data-align='wide'] {
